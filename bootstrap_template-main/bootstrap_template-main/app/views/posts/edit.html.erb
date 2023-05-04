@@ -1,0 +1,30 @@
+<h1>Editing Post</h1>
+
+<%= form_for(@post) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, id: :post_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, id: :post_body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author, id: :post_author %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', posts_path %>
+
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

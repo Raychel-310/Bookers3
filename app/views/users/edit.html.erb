@@ -1,0 +1,20 @@
+<h2>User info</h2>
+<%= form_with model: @user do |f| %>
+  <p>Name</p>
+  <%= f.text_field :name %>
+  <p>Image</p>
+  <%= f.file_field :profile_image, placeholder: "ファイルを選択", accept: "image/*" %> 
+  <p>Introduction</p>
+  <%= f.text_area :introduction %>
+  <%= f.submit "Update User" %>
+  
+
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this object from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+<% end %>
